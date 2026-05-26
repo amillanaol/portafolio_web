@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+
+/* === Scroll Reveal === */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal="fade"] {
+  transform: none;
+}
+
+/* === Hero Animations === */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-depth-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+.hero-stagger > * {
+  opacity: 0;
+  animation: hero-fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-stagger > *:nth-child(1) { animation-delay: 0.15s; }
+.hero-stagger > *:nth-child(2) { animation-delay: 0.3s; }
+.hero-stagger > *:nth-child(3) { animation-delay: 0.5s; }
+.hero-stagger > *:nth-child(4) { animation-delay: 0.75s; }
+
+.hero-depth {
+  animation: hero-depth-pulse 8s ease-in-out infinite;
+}
+
+/* === Subtle Icon Animation === */
+@keyframes icon-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.icon-float {
+  animation: icon-float 4s ease-in-out infinite;
+}
+
+/* === Mobile Menu Transition === */
+.menu-enter-active,
+.menu-leave-active {
+  transition: all 0.35s ease-out;
+}
+.menu-enter-from,
+.menu-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+.bg-hero-image { background-image: url('/images/background-hero.jpg'); }
