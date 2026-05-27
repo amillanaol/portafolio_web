@@ -64,7 +64,7 @@ export default defineNuxtConfig({
 
   // SEO
   app: {
-    baseURL: '/landing-page/',
+    baseURL: '/landing_page/',
     head: {
       title: 'Alexis Millanao | Desarrollador Backend & Automatización',
       htmlAttrs: { lang: 'es' },
