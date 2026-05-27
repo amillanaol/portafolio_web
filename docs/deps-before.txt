@@ -1,0 +1,18 @@
+﻿nuxt-vue-static-showcase@ C:\Users\alexi\src\amillanaol\landing_page
++-- @emnapi/wasi-threads@1.2.1 extraneous
++-- @napi-rs/wasm-runtime@1.1.4 extraneous
++-- @nuxt/devtools@3.2.4
++-- @nuxtjs/eslint-config-typescript@12.1.0
++-- @nuxtjs/tailwindcss@6.14.0
++-- @playwright/test@1.60.0
++-- @tybys/wasm-util@0.10.1 extraneous
++-- @typescript-eslint/eslint-plugin@8.60.0
++-- @typescript-eslint/parser@8.60.0
++-- eslint-plugin-nuxt@4.0.0
++-- eslint@8.57.1
++-- nuxt@3.21.6 invalid: "^4.4.6" from the root project
++-- tslib@2.8.1 extraneous
++-- typescript@5.9.3
++-- vue-router@4.6.4
+`-- vue@3.5.34
+

@@ -1,111 +1,51 @@
-# nuxt-vue-static-showcase
+# Landing Page Showcase
 
-Landing page de servicios freelance desarrollada con Nuxt 3, Vue 3, TypeScript y Tailwind CSS.
+Demo de landing page profesional con **Nuxt 3**, **Vue 3**, **TypeScript** y **Tailwind CSS**. Aplica Clean Architecture en frontend estático.
+
+## Vista Previa
+
+![Vista previa](images/preview.png)
+
+## Sobre el Proyecto
+
+Proyecto muestra que demuestra cómo aplicar **Clean Architecture** en un frontend Nuxt 3. Separación clara de responsabilidades: UI pura en componentes, lógica de negocio en composables, datos en dominio.
 
 ## Stack
 
-- **Framework**: Nuxt 3
-- **UI**: Vue 3 (Composition API)
-- **Estilos**: Tailwind CSS 3
-- **Tipado**: TypeScript (strict mode)
-- **Deployment**: GitHub Pages / Docker / Coolify
+| Tecnología | Uso |
+|-----------|-----|
+| Nuxt 3 | Framework SSR/SSG |
+| Vue 3 + Composition API | UI reactiva |
+| Tailwind CSS 3 | Estilos utilitarios |
+| TypeScript strict | Tipado estático |
+| GitHub Actions | CI/CD automatizado |
 
-## Arquitectura del proyecto
+## Highlights de Arquitectura
 
-Este proyecto aplica los principios de **Clean Architecture** adaptados a un sitio frontend estático:
+Adaptación de Clean Architecture para frontend estático:
 
 ```
-Presentation  →  Application  →  Domain
-(components)     (composables)    (types + data)
+Presentation → Application → Domain
+(components)  (composables)  (types + data)
 ```
 
-### Capas y dependencias
-
-| Capa | Carpeta | Responsabilidad |
-|------|---------|-----------------|
+| Capa | Carpeta | Rol |
+|------|---------|-----|
 | **Domain** | `/types/` | Interfaces TypeScript puras |
-| **Domain Data** | `/data/` | Constantes tipadas con datos reales |
-| **Application** | `/composables/` | Un composable por concepto de dominio |
-| **Presentation** | `/components/` | Componentes Vue (UI pura) |
+| **Domain Data** | `/data/` | Mock data estratificado |
+| **Application** | `/composables/` | Un composable por concepto |
+| **Presentation** | `/components/` | Componentes Vue sin lógica de negocio |
 | **Infrastructure** | `/pages/`, `/layouts/` | Ensamblaje Nuxt, SEO, rutas |
 
-### Regla crítica
+Decisión de diseño clave: **componentes nunca importan desde `/data/`**. Siempre usan composables. Así cambiar fuente de datos (archivo → API → CMS) sin tocar UI.
 
-> **Los componentes NUNCA importan desde `/data/`. Siempre usan composables.**
-
-Esto permite cambiar la fuente de datos (archivo estático → API → CMS) sin tocar ningún componente.
-
-## Instalación
+## Scripts
 
 ```bash
-npm install
+npm install        # Instalar dependencias
+npm run dev        # Servidor desarrollo (http://localhost:3000)
+npm run generate   # Build estático → .output/public/
 ```
-
-## Desarrollo
-
-Inicia el servidor de desarrollo:
-
-```bash
-npm run dev
-```
-
-Accede a http://localhost:3000
-
-## Build estático
-
-Genera el sitio estático para producción:
-
-```bash
-npm run generate
-```
-
-Los archivos se generan en `.output/public/`
-
-## Docker
-
-Los archivos relacionados a Docker están en la carpeta `docker/`:
-
-```
-docker/
-├── .env            # Variables de entorno (puerto, etc.)
-├── Dockerfile
-├── docker-compose.yaml
-├── nginx.conf
-└── volumes/        # Datos persistentes
-```
-
-### Configuración de puerto
-
-Por defecto el sitio se sirve en el puerto `8080`. Si ya está ocupado, créate `docker/.env` basándote en `.env.example`:
-
-```ini
-HOST_PORT=9090
-```
-
-### Con Docker Compose
-
-```bash
-docker compose -f docker/docker-compose.yaml up -d
-```
-
-Accede a http://localhost:8080 (o el puerto configurado en `HOST_PORT`)
-
-### Build y ejecución local (sin Compose)
-
-```bash
-docker build -f docker/Dockerfile -t nuxt-landing .
-docker run -p 8080:80 nuxt-landing
-```
-
-## Deploy
-
-### GitHub Pages
-
-El proyecto incluye un workflow de GitHub Actions que hace deploy automático a GitHub Pages en cada push a `main`.
-
-### Coolify
-
-Puedes desplegar el contenedor Docker en Coolify usando el `Dockerfile` en `docker/Dockerfile`.
 
 ## Licencia
 
