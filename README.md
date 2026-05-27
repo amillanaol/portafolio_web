@@ -1,6 +1,6 @@
 # Landing Page - Alexis Millanao Lepileo
 
-![Vista previa](images/preview.png)
+![Vista previa](https://raw.githubusercontent.com/amillanaol/landing_page/refs/heads/main/docs/assets/preview.png)
 
 ## Sobre el Proyecto
 
