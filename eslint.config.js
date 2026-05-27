@@ -4,6 +4,7 @@ import pluginVue from 'eslint-plugin-vue'
 import nuxtPlugin from 'eslint-plugin-nuxt'
 import globals from 'globals'
 import tsParser from '@typescript-eslint/parser'
+import vueParser from 'vue-eslint-parser'
 
 export default [
   js.configs.recommended,
@@ -12,7 +13,12 @@ export default [
   {
     files: ['**/*.ts', '**/*.vue'],
     languageOptions: {
-      parser: tsParser,
+      parser: vueParser,
+      parserOptions: {
+        parser: tsParser,
+        ecmaVersion: 'latest',
+        sourceType: 'module'
+      },
       globals: {
         ...globals.browser,
         ...globals.node,
