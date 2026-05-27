@@ -2,7 +2,7 @@
 
 Este proyecto sirve como demostración de cómo aplicar patrones de **Clean Architecture** en una aplicación frontend con Nuxt. La separación de responsabilidades garantiza que la capa de presentación (UI) sea independiente de la lógica de negocio y la fuente de datos.
 
-![Vista previa](https://raw.githubusercontent.com/amillanaol/landing_page/refs/heads/main/docs/assets/preview.png)
+![Vista previa](https://raw.githubusercontent.com/amillanaol/portafolio_web/refs/heads/main/docs/assets/preview.png)
 
 ## Stack Tecnológico
 
@@ -19,7 +19,7 @@ Este proyecto sirve como demostración de cómo aplicar patrones de **Clean Arch
 
 El proyecto organiza el código en tres capas principales:
 
-![Infografia: Arquitectura de tres capas](https://raw.githubusercontent.com/amillanaol/landing_page/refs/heads/main/docs/assets/arquitectura.png)
+![Infografia: Arquitectura de tres capas](https://raw.githubusercontent.com/amillanaol/portafolio_web/refs/heads/main/docs/assets/arquitectura.png)
 
 - **Domain (`/types/`, `/data/`)**: Interfaces de datos puras y mock data estratificado.
 - **Application (`/composables/`)**: Lógica de negocio encapsulada por concepto de dominio.
