@@ -53,18 +53,18 @@ export default defineNuxtConfig({
     },
   },
 
-  // Generación estática (SPA)
+  // Generación estática (SSG)
   ssr: false,
   nitro: {
     prerender: {
-      routes: [],
+      routes: ['/'],
       failOnError: false,
     },
   },
 
   // SEO
   app: {
-    baseURL: '/landing_page/',
+    baseURL: process.env.BASE_URL || '/landing-page/',
     head: {
       title: 'Alexis Millanao | Desarrollador Backend & Automatización',
       htmlAttrs: { lang: 'es' },
