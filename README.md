@@ -2,7 +2,7 @@
 
 Este proyecto sirve como demostración de cómo aplicar patrones de **Clean Architecture** en una aplicación frontend con Nuxt. La separación de responsabilidades garantiza que la capa de presentación (UI) sea independiente de la lógica de negocio y la fuente de datos.
 
-![Vista previa](https://raw.githubusercontent.com/amillanaol/landing_page/refs/heads/main/docs/assets/preview.png|500)
+![Vista previa](https://raw.githubusercontent.com/amillanaol/landing_page/refs/heads/main/docs/assets/preview.png)
 
 ## Stack Tecnológico
 
