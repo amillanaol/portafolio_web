@@ -3,5 +3,6 @@ export interface Project {
   name: string
   description: string
   technologies: string[]
+  category: string
   url: string
 }
