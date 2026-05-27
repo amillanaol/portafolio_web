@@ -21,11 +21,6 @@ El proyecto organiza el código en tres capas principales:
 
 ![Infografia: Arquitectura de tres capas](https://raw.githubusercontent.com/amillanaol/landing_page/refs/heads/main/docs/assets/arquitectura.png)
 
-```
-Presentation → Application → Domain
-(components)  (composables)  (types + data)
-```
-
 - **Domain (`/types/`, `/data/`)**: Interfaces de datos puras y mock data estratificado.
 - **Application (`/composables/`)**: Lógica de negocio encapsulada por concepto de dominio.
 - **Presentation (`/components/`)**: Componentes de UI agnósticos a la fuente de datos.
