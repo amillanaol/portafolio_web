@@ -18,6 +18,13 @@ const { about } = useAbout()
           GitHub
         </AppButton>
         <AppButton
+          :href="about.patreon"
+          target="_blank"
+          variant="outline"
+        >
+          Patreon
+        </AppButton>
+        <AppButton
           :href="about.buymeacoffee"
           target="_blank"
           variant="secondary"
