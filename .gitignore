@@ -22,6 +22,9 @@ __pycache__
 test-results/
 playwright-report/
 
+# Agent config (junctions to global skills)
+.agents/
+
 # Local env files
 .env
 .env.*
