@@ -18,14 +18,16 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "@playwright/test": "^1.60.0",
     "@typescript-eslint/eslint-plugin": "^8.60.0",
     "@typescript-eslint/parser": "^8.60.0",
     "eslint": "^10.4.0",
     "eslint-plugin-nuxt": "^4.0.0",
+    "globals": "^17.6.0",
     "nuxt": "^4.4.6",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.60.0",
+    "vue-eslint-parser": "^10.4.0"
   }
 }
