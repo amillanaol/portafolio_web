@@ -6,6 +6,9 @@ $env:AWS_DEFAULT_REGION = 'us-east-1'
 $env:AWS_ACCESS_KEY_ID = 'test'
 $env:AWS_SECRET_ACCESS_KEY = 'test'
 
+# baseURL para Floci S3 (coincide con nombre del bucket)
+$env:BASE_URL = '/landing-page/'
+
 $health = $null
 try { $health = Invoke-RestMethod "$endpoint/_localstack/health" -TimeoutSec 5 } catch {}
 if (-not $health) { Write-Host "Floci no responde, ejecuta: docker compose -f docker/docker-compose.floci.yml up -d"; exit 1 }
