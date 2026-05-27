@@ -1,50 +1,46 @@
-# Landing Page Showcase
-
-Demo de landing page profesional con **Nuxt 3**, **Vue 3**, **TypeScript** y **Tailwind CSS**. Aplica Clean Architecture en frontend estático.
-
-## Vista Previa
+# Landing Page - Alexis Millanao Lepileo
 
 ![Vista previa](images/preview.png)
 
 ## Sobre el Proyecto
 
-Proyecto muestra que demuestra cómo aplicar **Clean Architecture** en un frontend Nuxt 3. Separación clara de responsabilidades: UI pura en componentes, lógica de negocio en composables, datos en dominio.
+Este proyecto sirve como demostración de cómo aplicar patrones de **Clean Architecture** en una aplicación frontend con Nuxt. La separación de responsabilidades garantiza que la capa de presentación (UI) sea independiente de la lógica de negocio y la fuente de datos.
 
-## Stack
+## Stack Tecnológico
 
-| Tecnología | Uso |
-|-----------|-----|
-| Nuxt 3 | Framework SSR/SSG |
-| Vue 3 + Composition API | UI reactiva |
-| Tailwind CSS 3 | Estilos utilitarios |
-| TypeScript strict | Tipado estático |
-| GitHub Actions | CI/CD automatizado |
+| Tecnología     | Rol                                 |
+| -------------- | ----------------------------------- |
+| Nuxt 4         | Framework web (SSG)                 |
+| Vue 3          | UI y reactividad                    |
+| Tailwind CSS 3 | Estilos utilitarios                 |
+| TypeScript 6   | Tipado estático estricto            |
+| ESLint 10      | Calidad y estandarización de código |
+| GitHub Actions | CI/CD automatizado                  |
 
 ## Highlights de Arquitectura
 
-Adaptación de Clean Architecture para frontend estático:
+El proyecto organiza el código en tres capas principales:
 
 ```
 Presentation → Application → Domain
 (components)  (composables)  (types + data)
 ```
 
-| Capa | Carpeta | Rol |
-|------|---------|-----|
-| **Domain** | `/types/` | Interfaces TypeScript puras |
-| **Domain Data** | `/data/` | Mock data estratificado |
-| **Application** | `/composables/` | Un composable por concepto |
-| **Presentation** | `/components/` | Componentes Vue sin lógica de negocio |
-| **Infrastructure** | `/pages/`, `/layouts/` | Ensamblaje Nuxt, SEO, rutas |
+- **Domain (`/types/`, `/data/`)**: Interfaces de datos puras y mock data estratificado.
+- **Application (`/composables/`)**: Lógica de negocio encapsulada por concepto de dominio.
+- **Presentation (`/components/`)**: Componentes de UI agnósticos a la fuente de datos.
+- **Infrastructure**: Ensamblaje, SEO y enrutamiento.
 
-Decisión de diseño clave: **componentes nunca importan desde `/data/`**. Siempre usan composables. Así cambiar fuente de datos (archivo → API → CMS) sin tocar UI.
+**Regla de Oro**: Los componentes nunca acceden directamente a `/data/`. Siempre interactúan a través de `composables`, permitiendo cambiar la fuente de datos (archivos estáticos → API → CMS) sin modificar la UI.
 
 ## Scripts
 
 ```bash
 npm install        # Instalar dependencias
 npm run dev        # Servidor desarrollo (http://localhost:3000)
-npm run generate   # Build estático → .output/public/
+npm run generate   # Build estático optimizado
+npm run lint       # Validación de estilo de código
+npm run typecheck  # Validación de tipos
 ```
 
 ## Licencia
