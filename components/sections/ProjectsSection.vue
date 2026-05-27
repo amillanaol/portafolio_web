@@ -11,7 +11,7 @@ const categoryPriority: Record<string, number> = {
   n8n: 6,
 }
 
-const collapsedCategories = new Set(['Python', 'Java'])
+const collapsedCategories = new Set(['Python', 'Java', 'n8n', 'PowerShell'])
 
 const sortedProjects = computed(() => {
   return [...projects].sort((a, b) => {
@@ -124,25 +124,37 @@ function countTechs(projectList: typeof projects) {
           <div
             v-for="project in groupedProjects[cat]"
             :key="project.id"
-            class="py-2 px-3 rounded-lg bg-gray-800/30"
+            class="py-2 px-3 rounded-lg bg-gray-800/30 flex items-start gap-4"
           >
-            <div class="flex items-center gap-3">
-              <AppBadge variant="primary" class="shrink-0">
-                {{ project.category }}
-              </AppBadge>
-              <span class="text-gray-300 font-medium">{{ project.name }}</span>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3">
+                <AppBadge variant="primary" class="shrink-0">
+                  {{ project.category }}
+                </AppBadge>
+                <span class="text-gray-300 font-medium">{{ project.name }}</span>
+              </div>
+              <p class="text-gray-500 text-sm mt-1">
+                {{ project.description }}
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-2">
+                <AppBadge
+                  v-for="tech in project.technologies"
+                  :key="tech"
+                  class="text-xs"
+                >
+                  {{ tech }}
+                </AppBadge>
+              </div>
             </div>
-            <p class="text-gray-500 text-sm mt-1 ml-1">
-              {{ project.description }}
-            </p>
-            <div class="flex flex-wrap gap-1.5 mt-2 ml-1">
-              <AppBadge
-                v-for="tech in project.technologies"
-                :key="tech"
+            <div class="shrink-0 pt-1">
+              <AppButton
+                :href="project.url"
+                target="_blank"
+                variant="outline"
                 class="text-xs"
               >
-                {{ tech }}
-              </AppBadge>
+                Ver en GitHub →
+              </AppButton>
             </div>
           </div>
         </div>
