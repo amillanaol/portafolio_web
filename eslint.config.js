@@ -29,6 +29,7 @@ export default [
         useScrollReveal: 'readonly',
         useHead: 'readonly',
         ref: 'readonly',
+        computed: 'readonly',
         onMounted: 'readonly',
         onUnmounted: 'readonly'
       }
