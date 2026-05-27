@@ -24,6 +24,12 @@ const { about } = useAbout()
         <AppButton href="#servicios" variant="primary">
           Ver servicios
         </AppButton>
+        <AppButton href="#proyectos" variant="primary">
+          Ver proyectos
+        </AppButton>
+        <AppButton href="#contacto" variant="primary">
+          Contacto
+        </AppButton>
         <AppButton :href="about.github" variant="outline" target="_blank">
           GitHub
         </AppButton>
