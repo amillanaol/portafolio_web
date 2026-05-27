@@ -11,11 +11,11 @@ const { about } = useAbout()
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <AppButton
-          href="http://192.168.100.221:8384/task-request"
+          href="https://orcid.org/0009-0003-1768-7048"
           target="_blank"
           variant="primary"
         >
-          Solicitar cotización
+          Ver perfil en ORCID
         </AppButton>
         <AppButton
           :href="about.github"
