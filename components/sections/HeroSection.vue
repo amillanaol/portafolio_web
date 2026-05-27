@@ -17,7 +17,7 @@ const { about } = useAbout()
       </p>
       
       <p class="text-gray-400 max-w-2xl mx-auto mb-10 text-lg">
-        {{ about.summary.split('.')[0] }}.
+        Freelance en desarrollo de software con trayectoria en soporte TI, aportando sistemas confiables, escalables para negocios y entornos corporativos.
       </p>
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -29,9 +29,6 @@ const { about } = useAbout()
         </AppButton>
         <AppButton href="#contacto" variant="primary">
           Contacto
-        </AppButton>
-        <AppButton :href="about.github" variant="outline" target="_blank">
-          GitHub
         </AppButton>
       </div>
     </div>
