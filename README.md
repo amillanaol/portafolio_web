@@ -1,10 +1,8 @@
 # Landing Page - Alexis Millanao Lepileo
 
-![Vista previa](https://raw.githubusercontent.com/amillanaol/landing_page/refs/heads/main/docs/assets/preview.png)
-
-## Sobre el Proyecto
-
 Este proyecto sirve como demostración de cómo aplicar patrones de **Clean Architecture** en una aplicación frontend con Nuxt. La separación de responsabilidades garantiza que la capa de presentación (UI) sea independiente de la lógica de negocio y la fuente de datos.
+
+![Vista previa](https://raw.githubusercontent.com/amillanaol/landing_page/refs/heads/main/docs/assets/preview.png|500)
 
 ## Stack Tecnológico
 
@@ -20,6 +18,8 @@ Este proyecto sirve como demostración de cómo aplicar patrones de **Clean Arch
 ## Highlights de Arquitectura
 
 El proyecto organiza el código en tres capas principales:
+
+![Infografia: Arquitectura de tres capas](https://raw.githubusercontent.com/amillanaol/landing_page/refs/heads/main/docs/assets/arquitectura.png)
 
 ```
 Presentation → Application → Domain
