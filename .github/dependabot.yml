@@ -1,0 +1,16 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: "npm"        # Ecosistema de paquetes (npm, pip, maven, etc.)
+    directory: "/"                  # Carpeta donde está package.json
+    schedule:
+      interval: "weekly"            # Frecuencia de revisión (daily, weekly, monthly)
+    commit-message:
+      prefix: "deps"                # Prefijo para los commits de Dependabot
+    open-pull-requests-limit: 5     # Máximo de PRs abiertos a la vez
+    allow:
+      - dependency-type: "direct"   # Solo actualiza dependencias directas
