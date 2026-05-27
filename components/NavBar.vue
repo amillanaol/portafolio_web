@@ -10,7 +10,6 @@ const navLinks = [
   { href: '#proyectos', label: 'Proyectos' },
   { href: '#stack', label: 'Stack' },
   { href: '#contacto', label: 'Contacto' },
-  { href: 'http://192.168.100.221:8384/task-request', label: 'Cotizar', external: true },
 ]
 
 onMounted(() => {
