@@ -11,7 +11,7 @@ const categoryPriority: Record<string, number> = {
   n8n: 6,
 }
 
-const collapsedCategories = new Set(['Python', 'Java', 'n8n', 'PowerShell'])
+const collapsedCategories = new Set(['Python', 'Java', 'n8n', 'PowerShell', 'TypeScript', 'JavaScript', 'PHP'])
 
 const sortedProjects = computed(() => {
   return [...projects].sort((a, b) => {
@@ -52,7 +52,7 @@ function countTechs(projectList: typeof projects) {
 </script>
 
 <template>
-  <AppSection id="proyectos" title="Proyectos">
+  <AppSection id="proyectos" title="Proyectos públicos en GitHub">
     <div class="space-y-8">
       <div v-if="otherCategoriesList.length">
         <div class="flex flex-wrap gap-2 justify-center mb-6">
