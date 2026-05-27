@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Generate Static Site
-        run: npm run generate
+        run: BASE_URL='/portafolio_web/' npm run generate
 
       - name: Add .nojekyll
         run: touch .output/public/.nojekyll
