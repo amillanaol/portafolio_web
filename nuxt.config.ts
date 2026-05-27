@@ -53,11 +53,10 @@ export default defineNuxtConfig({
     },
   },
 
-  // Generación estática (SSG)
+  // SPA pura - prerender tolerante a bug ESM Windows
   ssr: false,
   nitro: {
     prerender: {
-      routes: ['/'],
       failOnError: false,
     },
   },
