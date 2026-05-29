@@ -71,6 +71,7 @@ export default defineNuxtConfig({
       title: 'Alexis Millanao | Desarrollador Backend & Automatización',
       htmlAttrs: { lang: 'es' },
       link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/landing-page/favicon_badge.svg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap' }
