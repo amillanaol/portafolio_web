@@ -10,7 +10,7 @@ const { about } = useAbout()
     
     <div class="container mx-auto px-4 relative z-10 text-center">
       <h1 class="text-3xl md:text-5xl font-extrabold mb-4 animate-fade-in tracking-tight">
-        <span class="bg-gradient-to-r from-[#3B82F6] to-[#655FA5] bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-[#2679F6] via-[#5655FA] to-[#4C4C75] bg-clip-text text-transparent">
           {{ about.name }}
         </span>
       </h1>
