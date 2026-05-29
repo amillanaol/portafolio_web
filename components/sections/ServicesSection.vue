@@ -6,7 +6,7 @@ const soporteServices = services.filter(s => s.category === 'soporte')
 </script>
 
 <template>
-  <AppSection id="servicios" title="Servicios">
+  <AppSection id="servicios" title="Mis Servicios">
     <div class="mb-12">
       <h3 data-reveal :data-reveal-delay="150" class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
         <span class="w-1 h-8 bg-primary-500 rounded-full" />
