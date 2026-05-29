@@ -16,18 +16,32 @@ const { about } = useAbout()
         {{ about.title }}
       </p>
       
-      <p class="text-gray-400 max-w-2xl mx-auto mb-10 text-lg">
+      <p class="text-gray-400 max-w-2xl mx-auto mb-6 text-lg">
         Freelance en desarrollo de software con trayectoria en soporte TI, aportando sistemas confiables, escalables para negocios y entornos corporativos.
       </p>
+
+      <div class="max-w-2xl mx-auto mb-10 text-left">
+        <div v-for="section in about.sections" :key="section.title" class="mb-4">
+          <h3 class="text-sm font-semibold text-primary-400 uppercase tracking-wider mb-3 text-center">
+            {{ section.title }}
+          </h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-gray-400 text-sm">
+            <li v-for="item in section.items" :key="item" class="flex items-start">
+              <span class="text-primary-500 mr-2">▹</span>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <AppButton href="#servicios" variant="primary">
+        <AppButton href="#servicios" variant="outline">
           Ver servicios
         </AppButton>
-        <AppButton href="#proyectos" variant="primary">
+        <AppButton href="#proyectos" variant="outline">
           Ver proyectos
         </AppButton>
-        <AppButton href="#contacto" variant="primary">
+        <AppButton href="#contacto" variant="outline">
           Contacto
         </AppButton>
       </div>
