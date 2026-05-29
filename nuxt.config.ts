@@ -30,22 +30,25 @@ export default defineNuxtConfig({
       theme: {
         extend: {
           colors: {
+            dark: '#121212',
+            gold: '#B29E10',
             primary: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              200: '#bae6fd',
-              300: '#7dd3fc',
-              400: '#38bdf8',
-              500: '#0ea5e9',
-              600: '#0284c7',
-              700: '#0369a1',
-              800: '#075985',
-              900: '#0c4a6e',
-              950: '#082f49',
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3B82F6', // Azul eléctrico solicitado
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              950: '#172554',
             },
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif'],
           },
         },
       },
@@ -67,6 +70,11 @@ export default defineNuxtConfig({
     head: {
       title: 'Alexis Millanao | Desarrollador Backend & Automatización',
       htmlAttrs: { lang: 'es' },
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap' }
+      ],
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
