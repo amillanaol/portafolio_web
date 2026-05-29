@@ -3,26 +3,33 @@ const { about } = useAbout()
 </script>
 
 <template>
-  <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-hero-image opacity-30 blur-md" />
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-900/20 via-transparent to-transparent" />
+  <section class="min-h-screen flex items-center justify-center relative overflow-hidden bg-dark">
+    <!-- Gradient background effect -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(59,130,246,0.1),_transparent_50%)]" />
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-hero-image opacity-10 blur-sm" />
     
     <div class="container mx-auto px-4 relative z-10 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
-        <span class="text-white">{{ about.name }}</span>
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in tracking-tight">
+        <span class="bg-gradient-to-r from-[#3B82F6] to-[#655FA5] bg-clip-text text-transparent">
+          {{ about.name }}
+        </span>
       </h1>
       
-      <p class="text-xl md:text-2xl text-primary-400 mb-6 font-medium">
+      <p class="text-xl md:text-2xl mb-2 text-gold-metallic">
         {{ about.title }}
       </p>
       
-      <p class="text-gray-400 max-w-2xl mx-auto mb-6 text-lg">
+      <p class="text-primary-500 text-lg mb-8 font-medium italic">
+        "Soluciones web y DevOps confiables"
+      </p>
+      
+      <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">
         Freelance en desarrollo de software con trayectoria en soporte TI, aportando sistemas confiables, escalables para negocios y entornos corporativos.
       </p>
 
-      <div class="max-w-2xl mx-auto mb-10 text-left">
+      <div class="max-w-3xl mx-auto mb-12 text-left bg-gray-900/40 p-6 rounded-2xl border border-gray-800/50 backdrop-blur-sm">
         <div v-for="section in about.sections" :key="section.title" class="mb-4">
-          <h3 class="text-sm font-semibold text-primary-400 uppercase tracking-wider mb-3 text-center">
+          <h3 class="text-sm font-bold text-gold-solid uppercase tracking-wider mb-3 text-center">
             {{ section.title }}
           </h3>
           <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-gray-400 text-sm">
