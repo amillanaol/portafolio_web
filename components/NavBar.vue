@@ -47,7 +47,7 @@ function toggleMobileMenu() {
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-between h-16">
           <a href="#" class="flex items-center gap-2 text-xl font-bold text-white group">
-            <img :src="baseURL + 'icono.ico'" alt="AML Logo" class="w-8 h-8 transition-transform duration-300 group-hover:scale-110 flex-shrink-0" />
+            <img :src="baseURL + 'icono.png'" alt="AML Logo" class="w-8 h-8 transition-transform duration-300 group-hover:scale-110 flex-shrink-0" />
             <span class="truncate">{{ about.name }}</span>
           </a>
           
