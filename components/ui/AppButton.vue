@@ -18,11 +18,11 @@ const component = computed(() => {
 const variantClasses = computed(() => {
   switch (props.variant) {
     case 'primary':
-      return 'bg-primary-600 hover:bg-primary-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary-500/25'
+      return 'btn-primary px-6 py-3 inline-flex items-center justify-center font-medium'
     case 'secondary':
-      return 'bg-gray-700 hover:bg-gray-600 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20'
+      return 'bg-gray-800 hover:bg-gray-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 border border-gray-700'
     case 'outline':
-      return 'border-2 border-primary-500 text-primary-400 hover:bg-primary-500/10 font-medium px-6 py-3 rounded-lg transition-all duration-200 hover:-translate-y-0.5'
+      return 'btn-outline px-6 py-3 inline-flex items-center justify-center font-medium'
     default:
       return ''
   }
