@@ -4,7 +4,8 @@ param(
   [string]$S3Bucket = 'landing-page',
   [string]$BaseUrl = '/landing-page/',
   [string]$TestUrl = 'http://localhost:4566/landing-page/index.html',
-  [switch]$SkipDeploy
+  [switch]$SkipDeploy,
+  [switch]$SkipTest
 )
 
 $ErrorActionPreference = 'Continue'
@@ -99,7 +100,10 @@ if (-not $SkipDeploy) {
 }
 
 # 4. TEST (con reintento)
-Write-Host "[4/4] Running Playwright tests..." -ForegroundColor Yellow
+if ($SkipTest) {
+  Write-Host "[4/4] Skipping tests (-SkipTest)`n" -ForegroundColor Gray
+} else {
+  Write-Host "[4/4] Running Playwright tests..." -ForegroundColor Yellow
 $env:TEST_URL = $TestUrl
 $env:PLAYWRIGHT_HEADLESS = 'true'
 $testExit = 1
@@ -114,16 +118,17 @@ do {
   }
 } while ($testExit -ne 0 -and $testAttempts -lt 2)
 
-$elapsed = [math]::Round(((Get-Date) - $start).TotalSeconds, 1)
+  $elapsed = [math]::Round(((Get-Date) - $start).TotalSeconds, 1)
 
-if ($testExit -eq 0) {
-  Write-Host "`n========================================" -ForegroundColor Cyan
-  Write-Host "  ALL TESTS PASSED ($elapsed s)" -ForegroundColor Green
-  Write-Host "========================================" -ForegroundColor Cyan
-  exit 0
-} else {
-  Write-Host "`n========================================" -ForegroundColor Red
-  Write-Host "  TESTS FAILED after $testAttempts attempts ($elapsed s)" -ForegroundColor Red
-  Write-Host "========================================" -ForegroundColor Red
-  exit $testExit
+  if ($testExit -eq 0) {
+    Write-Host "`n========================================" -ForegroundColor Cyan
+    Write-Host "  ALL TESTS PASSED ($elapsed s)" -ForegroundColor Green
+    Write-Host "========================================" -ForegroundColor Cyan
+    exit 0
+  } else {
+    Write-Host "`n========================================" -ForegroundColor Red
+    Write-Host "  TESTS FAILED after $testAttempts attempts ($elapsed s)" -ForegroundColor Red
+    Write-Host "========================================" -ForegroundColor Red
+    exit $testExit
+  }
 }
