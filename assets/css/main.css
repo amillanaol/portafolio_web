@@ -61,6 +61,18 @@
   background-color: transparent;
 }
 
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #D4AF37;
+  text-shadow: 2px 2px 6px #655FA5;
+  transition: color 0.3s ease;
+}
+
+.hero-title:hover {
+  color: #3B82F6;
+}
+
 .nav-link:hover {
   @apply text-dark bg-gold;
   box-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
