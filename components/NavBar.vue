@@ -45,18 +45,19 @@ function toggleMobileMenu() {
     <div class="bg-gray-900/80 backdrop-blur-lg border-b border-gray-800">
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-between h-16">
-          <a href="#" class="text-xl font-bold text-white">
-            {{ about.name }}
+          <a href="#" class="flex items-center gap-2 text-xl font-bold text-white group">
+            <img src="/favicon.ico" alt="AML Logo" class="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
+            <span>{{ about.name }}</span>
           </a>
           
-          <div class="hidden md:flex items-center gap-8">
+          <div class="hidden md:flex items-center gap-4">
             <a
               v-for="link in navLinks"
               :key="link.href"
               :href="link.href"
               :target="link.external ? '_blank' : undefined"
               :rel="link.external ? 'noopener noreferrer' : undefined"
-              class="text-gray-300 hover:text-primary-400 transition-colors text-sm font-medium relative after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:bg-primary-400 after:transition-all after:duration-300 hover:after:w-full"
+              class="nav-link"
             >
               {{ link.label }}
             </a>
@@ -103,14 +104,14 @@ function toggleMobileMenu() {
             v-if="isMobileMenuOpen"
             class="md:hidden py-4 border-t border-gray-800"
           >
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-2">
             <a
               v-for="link in navLinks"
               :key="link.href"
               :href="link.href"
               :target="link.external ? '_blank' : undefined"
               :rel="link.external ? 'noopener noreferrer' : undefined"
-              class="text-gray-300 hover:text-primary-400 transition-colors py-2"
+              class="nav-link-mobile"
               @click="isMobileMenuOpen = false"
             >
               {{ link.label }}
