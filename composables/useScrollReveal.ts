@@ -7,17 +7,17 @@ export function useScrollReveal() {
         entries.forEach((entry) => {
           const el = entry.target as HTMLElement
 
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
             const delay = el.getAttribute('data-reveal-delay') || '0'
             el.style.setProperty('--reveal-delay', `${delay}ms`)
             el.classList.add('revealed')
-          } else {
+          } else if (entry.intersectionRatio === 0) {
             el.style.setProperty('--reveal-delay', '0ms')
             el.classList.remove('revealed')
           }
         })
       },
-      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' },
+      { threshold: [0, 0.15], rootMargin: '0px 0px -200px 0px' },
     )
 
     nextTick(() => {
