@@ -12,7 +12,7 @@ defineProps<Props>()
     <div class="container mx-auto px-4">
       <h2
         v-if="title"
-        class="text-3xl md:text-4xl font-bold text-center mb-12"
+        class="text-3xl md:text-4xl font-display font-bold text-center mb-12"
       >
         {{ title }}
       </h2>
