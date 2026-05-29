@@ -9,8 +9,89 @@
   }
 
   body {
-    @apply bg-gray-900 text-gray-100;
+    @apply bg-dark text-[#F9FAFB] font-sans;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+    background: linear-gradient(135deg, #B29E10 0%, #D4C14D 50%, #B29E10 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 2px rgba(178, 158, 16, 0.3));
+  }
+}
+
+/* === Text Effects === */
+.text-neon-blue {
+  @apply text-primary-400 font-semibold;
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.text-gold-metallic {
+  background: linear-gradient(
+    to right,
+    #B29E10 20%,
+    #D4C14D 40%,
+    #FFF291 50%,
+    #D4C14D 60%,
+    #B29E10 80%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+  filter: drop-shadow(0 0 2px rgba(178, 158, 16, 0.3));
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.text-gold-solid {
+  -webkit-text-fill-color: #B29E10;
+  background: none;
+  filter: none;
+}
+
+/* === Navigation Effects === */
+.nav-link {
+  @apply px-4 py-2 rounded-full font-semibold text-sm transition-all duration-300 text-gray-300;
+  background-color: transparent;
+}
+
+.nav-link:hover {
+  @apply text-dark bg-gold;
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+}
+
+.nav-link-mobile {
+  @apply px-4 py-3 rounded-xl font-semibold transition-all duration-300 text-gray-300;
+}
+
+.nav-link-mobile:hover {
+  @apply text-gold bg-primary-900/20;
+}
+
+/* === Custom Button Styles === */
+.btn-primary {
+  @apply bg-primary-500 text-white rounded-lg transition-all duration-300 font-sans;
+}
+
+.btn-primary:hover {
+  @apply bg-gold text-dark;
+  box-shadow: 0 0 15px #B29E10;
+}
+
+.btn-outline {
+  @apply border-2 border-primary-500 text-primary-400 rounded-lg transition-all duration-300 font-sans;
+}
+
+.btn-outline:hover {
+  @apply border-gold bg-gold text-dark;
+  box-shadow: 0 0 15px #B29E10;
 }
 
 /* === Scroll Reveal === */
