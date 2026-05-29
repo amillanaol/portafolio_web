@@ -20,7 +20,7 @@ const quickLinks = [
             {{ about.name }}
           </h3>
           <p class="text-gray-400 text-sm leading-relaxed">
-            {{ about.summary.split('.')[0] }}.
+            Soy especialista en soporte computacional en entornos corporativos con experiencia en desarrollo de software orientado a DevSecOps.
           </p>
         </div>
 
@@ -28,7 +28,7 @@ const quickLinks = [
           <h3 class="text-lg font-semibold text-white mb-3">
             Enlaces
           </h3>
-          <ul class="space-y-2">
+          <ul class="grid grid-cols-2 gap-2">
             <li v-for="link in quickLinks" :key="link.href">
               <a
                 :href="link.href"
