@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "nuxt typecheck",
+    "deploy": "powershell -NoLogo -NoProfile -NonInteractive -File scripts/deploy-test.ps1 -SkipTest",
     "deploy:test": "powershell -NoLogo -NoProfile -NonInteractive -File scripts/deploy-test.ps1"
   },
   "dependencies": {
