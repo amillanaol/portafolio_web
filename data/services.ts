@@ -25,12 +25,13 @@ export const services: Service[] = [
     id: 'automatizacion',
     title: 'Automatización de Procesos',
     description: 'Automatizo tareas y flujos de trabajo para reducir tiempo operativo, errores manuales y fricción entre herramientas.',
-    technologies: ['n8n', 'Playwright', 'Python', 'Agentes IA', 'Flujos Automatizados'],
+    technologies: ['n8n', 'Playwright', 'Python', 'Agentes IA', 'Rivet', 'Flujos Automatizados'],
     techDetails: [
       { name: 'n8n', description: 'orquestación de integraciones y workflows de negocio.' },
       { name: 'Playwright', description: 'pruebas automatizadas de aplicaciones web, CI/CD y validación de calidad.' },
       { name: 'Python', description: 'lenguaje versátil para scripting y automatización de procesos.' },
-      { name: 'Agentes IA', description: 'implementación de asistentes autónomos para tareas complejas.' }
+      { name: 'Agentes IA', description: 'implementación de asistentes autónomos para tareas complejas.' },
+      { name: 'Rivet', description: 'automatización de flujos y procesos técnicos.' }
     ],
     icon: 'cpu',
     category: 'software'
@@ -173,7 +174,6 @@ export const services: Service[] = [
       'Antigravity',
       'Ollama',
       'ChatGPT',
-      'Rivet',
       'Prompt Engineering'
     ],
     techDetails: [
@@ -181,7 +181,6 @@ export const services: Service[] = [
       { name: 'Antigravity', description: 'experimentación con entornos de IA y automatización creativa.' },
       { name: 'Ollama', description: 'despliegue de modelos personalizados en local con prompts adaptados.' },
       { name: 'ChatGPT', description: 'soporte en desarrollo, depuración y generación de código.' },
-      { name: 'Rivet', description: 'automatización de flujos y procesos técnicos.' },
       { name: 'Prompt Engineering', description: 'diseño de instrucciones efectivas para obtener resultados útiles.' }
     ],
     icon: 'sparkles',
