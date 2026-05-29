@@ -3,13 +3,13 @@ const { about } = useAbout()
 </script>
 
 <template>
-  <section class="min-h-screen flex items-center justify-center relative overflow-hidden bg-dark">
+  <section class="min-h-screen flex items-center justify-center relative overflow-hidden bg-dark pt-16">
     <!-- Gradient background effect -->
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(59,130,246,0.1),_transparent_50%)]" />
     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-hero-image opacity-10 blur-sm" />
     
     <div class="container mx-auto px-4 relative z-10 text-center">
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in tracking-tight">
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4 animate-fade-in tracking-tight">
         <span class="bg-gradient-to-r from-[#3B82F6] to-[#655FA5] bg-clip-text text-transparent">
           {{ about.name }}
         </span>
