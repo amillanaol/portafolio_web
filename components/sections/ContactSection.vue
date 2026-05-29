@@ -21,14 +21,14 @@ const { about } = useAbout()
         <AppButton
           :href="about.github"
           target="_blank"
-          variant="outline"
+          variant="primary"
         >
           GitHub
         </AppButton>
         <AppButton
           :href="about.patreon"
           target="_blank"
-          variant="outline"
+          variant="primary"
         >
           Patreon
         </AppButton>
