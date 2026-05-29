@@ -16,10 +16,12 @@ const { stack } = useStack()
           {{ category.name }}
         </h3>
         
-        <div data-reveal :data-reveal-delay="(index * 100) + 80" class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-2">
           <AppBadge
-            v-for="item in category.items"
+            v-for="(item, techIdx) in category.items"
             :key="item"
+            data-reveal="fade"
+            :data-reveal-delay="(index * 100) + 80 + (techIdx * 40)"
           >
             {{ item }}
           </AppBadge>
