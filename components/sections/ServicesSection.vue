@@ -24,6 +24,7 @@ const soporteServices = services.filter(s => s.category === 'soporte')
             <span v-else-if="service.icon === 'cpu'">⚡</span>
             <span v-else-if="service.icon === 'code'">🌐</span>
             <span v-else-if="service.icon === 'link'">🔗</span>
+            <span v-else-if="service.icon === 'cloud'">☁️</span>
             <span v-else>✨</span>
           </div>
           
@@ -36,12 +37,30 @@ const soporteServices = services.filter(s => s.category === 'soporte')
           </p>
           
           <div data-reveal :data-reveal-delay="(index * 100) + 240" class="flex flex-wrap gap-2">
-            <AppBadge
-              v-for="tech in service.technologies.slice(0, 4)"
-              :key="tech"
-            >
-              {{ tech }}
-            </AppBadge>
+            <template v-if="service.techDetails">
+              <div
+                v-for="detail in service.techDetails"
+                :key="detail.name"
+                class="group relative inline-block cursor-help"
+              >
+                <AppBadge>
+                  {{ detail.name }}
+                </AppBadge>
+                <!-- Tooltip -->
+                <div class="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 w-56 -translate-x-1/2 scale-95 rounded-lg bg-gray-900 border border-gray-700/80 p-2.5 text-xs text-gray-200 opacity-0 shadow-xl transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 whitespace-normal leading-relaxed text-center">
+                  {{ detail.description }}
+                  <div class="absolute top-full left-1/2 -mt-1 h-2 w-2 -translate-x-1/2 rotate-45 border-r border-b border-gray-700/80 bg-gray-900"></div>
+                </div>
+              </div>
+            </template>
+            <template v-else>
+              <AppBadge
+                v-for="tech in service.technologies.slice(0, 4)"
+                :key="tech"
+              >
+                {{ tech }}
+              </AppBadge>
+            </template>
           </div>
         </AppCard>
       </div>
@@ -65,6 +84,8 @@ const soporteServices = services.filter(s => s.category === 'soporte')
             <span v-else-if="service.icon === 'chat'">💬</span>
             <span v-else-if="service.icon === 'hashtag'">📱</span>
             <span v-else-if="service.icon === 'grid'">📊</span>
+            <span v-else-if="service.icon === 'book'">📚</span>
+            <span v-else-if="service.icon === 'tool'">🛠️</span>
             <span v-else>✨</span>
           </div>
           
@@ -77,12 +98,30 @@ const soporteServices = services.filter(s => s.category === 'soporte')
           </p>
           
           <div data-reveal :data-reveal-delay="(index * 100) + 240" class="flex flex-wrap gap-2">
-            <AppBadge
-              v-for="tech in service.technologies.slice(0, 4)"
-              :key="tech"
-            >
-              {{ tech }}
-            </AppBadge>
+            <template v-if="service.techDetails">
+              <div
+                v-for="detail in service.techDetails"
+                :key="detail.name"
+                class="group relative inline-block cursor-help"
+              >
+                <AppBadge>
+                  {{ detail.name }}
+                </AppBadge>
+                <!-- Tooltip -->
+                <div class="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 w-56 -translate-x-1/2 scale-95 rounded-lg bg-gray-900 border border-gray-700/80 p-2.5 text-xs text-gray-200 opacity-0 shadow-xl transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 whitespace-normal leading-relaxed text-center">
+                  {{ detail.description }}
+                  <div class="absolute top-full left-1/2 -mt-1 h-2 w-2 -translate-x-1/2 rotate-45 border-r border-b border-gray-700/80 bg-gray-900"></div>
+                </div>
+              </div>
+            </template>
+            <template v-else>
+              <AppBadge
+                v-for="tech in service.technologies.slice(0, 4)"
+                :key="tech"
+              >
+                {{ tech }}
+              </AppBadge>
+            </template>
           </div>
         </AppCard>
       </div>
