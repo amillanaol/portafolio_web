@@ -36,11 +36,13 @@ const soporteServices = services.filter(s => s.category === 'soporte')
             {{ service.description }}
           </p>
           
-          <div data-reveal :data-reveal-delay="(index * 100) + 240" class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap gap-2">
             <template v-if="service.techDetails">
               <div
-                v-for="detail in service.techDetails"
+                v-for="(detail, techIdx) in service.techDetails"
                 :key="detail.name"
+                data-reveal="fade"
+                :data-reveal-delay="(index * 100) + 240 + (techIdx * 50)"
                 class="group relative inline-block cursor-help"
               >
                 <AppBadge>
@@ -55,8 +57,10 @@ const soporteServices = services.filter(s => s.category === 'soporte')
             </template>
             <template v-else>
               <AppBadge
-                v-for="tech in service.technologies.slice(0, 4)"
+                v-for="(tech, techIdx) in service.technologies.slice(0, 4)"
                 :key="tech"
+                data-reveal="fade"
+                :data-reveal-delay="(index * 100) + 240 + (techIdx * 50)"
               >
                 {{ tech }}
               </AppBadge>
@@ -97,11 +101,13 @@ const soporteServices = services.filter(s => s.category === 'soporte')
             {{ service.description }}
           </p>
           
-          <div data-reveal :data-reveal-delay="(index * 100) + 240" class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap gap-2">
             <template v-if="service.techDetails">
               <div
-                v-for="detail in service.techDetails"
+                v-for="(detail, techIdx) in service.techDetails"
                 :key="detail.name"
+                data-reveal="fade"
+                :data-reveal-delay="(index * 100) + 240 + (techIdx * 50)"
                 class="group relative inline-block cursor-help"
               >
                 <AppBadge>
@@ -116,8 +122,10 @@ const soporteServices = services.filter(s => s.category === 'soporte')
             </template>
             <template v-else>
               <AppBadge
-                v-for="tech in service.technologies.slice(0, 4)"
+                v-for="(tech, techIdx) in service.technologies.slice(0, 4)"
                 :key="tech"
+                data-reveal="fade"
+                :data-reveal-delay="(index * 100) + 240 + (techIdx * 50)"
               >
                 {{ tech }}
               </AppBadge>
